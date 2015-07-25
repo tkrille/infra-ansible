@@ -1,0 +1,15 @@
+---
+
+- name: include vars file 'os_{{ ansible_distribution }}_{{ ansible_distribution_major_version }}.yml'
+  include_vars: os_{{ ansible_distribution }}_{{ ansible_distribution_major_version }}.yml
+
+- name: install default packages (apt)
+  apt: name={{ item }} state=latest update_cache=yes cache_valid_time=3600
+  when: ansible_pkg_mgr == "apt"
+  with_items: packages_default
+
+- name: install default packages (opkg)
+  opkg: state=present name={{ item }} update_cache=yes
+  when: ansible_pkg_mgr == "opkg"
+  with_items: packages_default
+

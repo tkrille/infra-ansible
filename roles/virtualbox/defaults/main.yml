@@ -1,0 +1,7 @@
+---
+
+virtualbox_network_bridge: br0
+virtualbox_network_bridge_netmask: 255.255.0.0
+virtualbox_network_bridge_gateway: 172.24.0.1
+virtualbox_network_bridge_ports: eth0
+

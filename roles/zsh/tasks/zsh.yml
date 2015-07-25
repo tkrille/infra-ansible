@@ -1,0 +1,7 @@
+---
+
+- name: deploy oh-my-zsh
+  git: repo=https://github.com/robbyrussell/oh-my-zsh dest=~root/.oh-my-zsh
+
+- name: switch to zsh
+  user: name=root shell=/usr/bin/zsh

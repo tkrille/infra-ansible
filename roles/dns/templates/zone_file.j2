@@ -1,0 +1,23 @@
+$TTL {{ item.ttl }}
+
+{{ item.domain }}. IN SOA {{ item.name_servers[0] }}. {{ item.admin_email }}. {{ item.serial }} 86400 7200 3600000 172800
+
+{% for name_server in item.name_servers %}
+{{ item.domain }}. IN NS {{ name_server }}.
+{% endfor %}
+
+{{ item.domain }}. IN A {{ item.ip }}
+
+{% for a_record in item.a_records | default([]) %}
+{{ a_record.name }}. IN A {{ a_record.ip }}
+{% endfor %}
+
+{% for alias in item.aliases | default([]) %}
+{{ alias.name }}. IN CNAME {{ alias.cname }}.
+{% endfor %}
+
+{% for mx_record in item.mx_records | default([]) %}
+{{ item.domain }}. IN MX {{ mx_record.priority }} {{ mx_record.server }}.
+{% endfor %}
+
+{{ item.domain }}. IN TXT "v=spf1 +a +mx -all"

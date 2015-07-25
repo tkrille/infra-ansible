@@ -1,0 +1,10 @@
+---
+
+- name: Configure dedicated Server
+  hosts: server
+  roles:
+    - dns
+    - role: openvpn_server
+      openvpn_server: "{{ server_openvpn_servers['cloud.thomaskrille.de'] }}"
+    - virtualbox
+    - vagrant

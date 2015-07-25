@@ -1,0 +1,20 @@
+---
+
+- name: check vagrant version
+  shell: "[ -x /usr/bin/vagrant ] && (vagrant --version | awk '{print $2}') || echo -1"
+  ignore_errors: yes
+  changed_when: vagrant_version_result.stdout != vagrant_version
+  register: vagrant_version_result
+
+- name: download vagrant
+  get_url: url="https://dl.bintray.com/mitchellh/vagrant/vagrant_{{ vagrant_version }}_x86_64.deb" dest="/tmp/vagrant_{{ vagrant_version }}_x86_64.deb" mode=0440
+  when: vagrant_version_result is defined and vagrant_version_result.stdout != vagrant_version
+
+- name: install vagrant
+  apt: deb=/tmp/vagrant_{{ vagrant_version }}_x86_64.deb
+  when: vagrant_version_result is defined and vagrant_version_result.stdout != vagrant_version
+
+- name: enable bash completion for vagrant
+  file: path=/etc/bash_completion.d/vagrant.sh
+          src=/opt/vagrant/embedded/gems/gems/vagrant-{{ vagrant_version }}/contrib/bash/completion.sh
+          state=link

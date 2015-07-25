@@ -1,0 +1,11 @@
+---
+
+- include: package.yml
+  tags: openvpn_common
+
+- include: configuration.yml
+  tags: openvpn_common
+
+- include: service.yml
+  tags: openvpn_common
+

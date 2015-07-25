@@ -1,0 +1,15 @@
+---
+
+- name: Custom tasks for NAS
+  hosts: nas
+
+  tasks:
+    - name: add cron job to restart cups on a regular basis
+      cron: state=present
+              name="restart cups on a regular basis"
+              job="/usr/sbin/service cups restart"
+              minute=0 hour=3
+      tags:
+        - cron_restart_cups
+        - configuration
+        - nas

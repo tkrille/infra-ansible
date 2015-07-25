@@ -1,0 +1,17 @@
+---
+
+packages_default:
+  - mc
+  - htop
+  - bash-completion
+  - vim
+  - iotop
+  - lsof
+  - git-core
+  - netcat
+  - curl
+  - language-pack-de
+  - tree
+  - screen
+  - zsh
+  - sudo

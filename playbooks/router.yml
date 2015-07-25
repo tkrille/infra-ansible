@@ -1,0 +1,8 @@
+---
+
+- name: Configure OpenWRT router (internal)
+  hosts: router
+
+  roles:
+    - role: openvpn_client
+      openvpn_client: "{{ router_openvpn_clients['cloud.thomaskrille.de'] }}"

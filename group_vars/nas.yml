@@ -1,0 +1,4 @@
+---
+
+packages_custom:
+  - linux-image-kirkwood

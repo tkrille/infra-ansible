@@ -1,0 +1,11 @@
+---
+
+- include: packages.yml
+  tags:
+    - packages
+    - virtualbox
+
+- include: network.yml
+  tags:
+    - network
+    - virtualbox

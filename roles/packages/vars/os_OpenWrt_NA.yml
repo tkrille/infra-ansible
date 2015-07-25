@@ -1,0 +1,12 @@
+---
+
+packages_default:
+  - htop
+  - bash-completion
+  - vim
+  - git
+  - netcat
+  - curl
+  - screen
+  - python-openssl
+  - sudo

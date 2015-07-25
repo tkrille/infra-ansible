@@ -1,0 +1,11 @@
+---
+
+- include: packages.yml
+  tags:
+    - dns
+    - packages
+
+- include: config.yml
+  tags:
+    - dns
+    - config

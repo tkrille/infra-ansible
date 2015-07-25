@@ -1,0 +1,8 @@
+---
+
+virtualbox_packages:
+  - bridge-utils
+  - build-essential
+  - virtualbox
+  - linux-image-amd64
+  - linux-headers-amd64

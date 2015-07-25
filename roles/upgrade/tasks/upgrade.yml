@@ -1,0 +1,13 @@
+---
+
+- name: update packages (apt)
+  apt: upgrade=dist update_cache=yes cache_valid_time=3600
+  when: ansible_pkg_mgr == "apt"
+
+- name: remove unneeded packages (apt)
+  command: apt-get autoremove -y
+  when: ansible_pkg_mgr == "apt"
+
+- name: update packages (yum)
+  yum: name=* state=latest
+  when: ansible_pkg_mgr == "yum"

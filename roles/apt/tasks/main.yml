@@ -1,0 +1,31 @@
+---
+
+- name: deploy sources.list
+  template: src=sources.list-{{ ansible_distribution }}_{{ ansible_distribution_major_version }}.j2
+              dest=/etc/apt/sources.list
+              owner=root group=root mode=0644
+  notify:
+    - update apt package cache
+  tags:
+    - apt
+
+- name: enable backports by default
+  template: src=backports_preferences.j2
+              dest=/etc/apt/preferences.d/enable-backports
+              owner=root group=root mode=0644
+  when: apt_backports
+  notify:
+    - update apt package cache
+  tags:
+    - apt
+
+- name: run handlers early to update apt cache
+  meta: flush_handlers
+  tags:
+    - apt
+
+- name: update apt package cache (if older than 1 hour) on a regular basis
+  apt: update_cache=yes cache_valid_time=3600
+  when: apt_update
+  tags:
+    - apt

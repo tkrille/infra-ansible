@@ -1,0 +1,4 @@
+---
+
+- include: configuration.yml
+  tags: openvpn_client

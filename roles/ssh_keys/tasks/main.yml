@@ -1,0 +1,5 @@
+---
+
+- include: ssh_keys_root.yml
+  tags:
+    - ssh_keys

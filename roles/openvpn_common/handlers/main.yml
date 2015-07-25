@@ -1,0 +1,5 @@
+---
+
+- name: Restart OpenVPN server/clients
+  command: /etc/init.d/openvpn restart
+  tags: [openvpn]

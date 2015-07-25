@@ -1,0 +1,7 @@
+---
+
+- include: package_apt.yml
+  when: ansible_pkg_mgr == "apt"
+
+- include: package_opkg.yml
+  when: ansible_pkg_mgr == "opkg"

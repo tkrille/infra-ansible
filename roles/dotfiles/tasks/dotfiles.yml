@@ -1,0 +1,12 @@
+---
+
+- name: deploy dotfiles
+  git: repo=https://github.com/tkrille/dotfiles dest=~root/.dotfiles
+
+- name: link dotfiles
+  file: src=/root/.dotfiles/.{{ item }} dest=/root/.{{ item }} state=link force=yes
+  with_items:
+    - zshrc
+    - vimrc
+    - curlrc
+    - gitconfig

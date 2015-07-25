@@ -1,0 +1,4 @@
+---
+
+ssh_keys: '{{ secrets_ssh_keys }}'
+ssh_keys_root: '{{ secrets_ssh_keys_root }}'

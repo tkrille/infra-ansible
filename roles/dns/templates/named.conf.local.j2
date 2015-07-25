@@ -1,0 +1,30 @@
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+include "/etc/bind/named.conf.log";
+
+acl internals {
+    127.0.0.0/8;
+};
+
+acl common-allow-transfer {
+    none;
+};
+
+controls {
+    inet 127.0.0.1 port 953 allow {
+        internals;
+    };
+};
+
+{% for zone in dns_zones %}
+zone "{{ zone.domain }}" {
+    type master;
+    file "/var/lib/bind/db.{{ zone.domain }}";
+    allow-transfer {
+        common-allow-transfer;
+    };
+};
+
+{% endfor %}

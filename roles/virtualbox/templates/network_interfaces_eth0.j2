@@ -1,0 +1,12 @@
+auto eth0
+iface eth0 inet static
+    address 84.19.186.99
+    netmask 255.255.255.0
+    network 84.19.186.0
+    broadcast 84.19.186.255
+    gateway 84.19.186.1
+    # dns-* options are implemented by the resolvconf package, if installed
+    dns-nameservers 193.22.254.22
+    dns-search keymachine.de
+    up   ip addr add 84.19.187.99/24 dev $IFACE
+    down ip addr del 84.19.187.99/24 dev $IFACE

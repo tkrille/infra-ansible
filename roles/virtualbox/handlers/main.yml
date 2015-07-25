@@ -1,0 +1,4 @@
+---
+
+- name: restart network
+  command: /etc/init.d/networking restart
