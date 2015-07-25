@@ -1,11 +1,13 @@
 auto br0
 iface br0 inet static
-    address 192.168.200.1
+    bridge_ports tap0
+    address 192.168.20.200
     netmask 255.255.255.0
-    network 192.168.200.0
-    broadcast 192.168.200.255
+    network 192.168.20.0
+    broadcast 192.168.20.255
     bridge_stp off
     bridge_waitport 0
     bridge_ports none
     bridge_maxwait 0
     bridge_fd 0
+    up ifconfig tap0 0.0.0.0 promisc up

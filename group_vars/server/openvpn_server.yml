@@ -6,21 +6,12 @@ server_openvpn_servers:
     server_name: km21007.keymachine.de
     cipher: AES-256-CBC
     comp_lzo: yes
-    dev: tun0
-    server: 192.168.210.0 255.255.255.0
-    persist_ifconfig_pool: yes
+    dev: tap0
     max_clients: 10
     float: yes
     client_to_client: yes
     routes:
-      - 192.168.10.0 255.255.255.0
-      - 192.168.20.0 255.255.255.0
-    push:
-      - route 192.168.220.0 255.255.255.0
-    client_configs:
-      router.home.thomaskrille.de:
-        - iroute 192.168.10.0 255.255.255.0
-        - iroute 192.168.20.0 255.255.255.0
+      - 192.168.10.0 255.255.255.0 192.168.20.1
     options:
       - mute 5
     server_key: "{{ secrets_server_openvpn_servers['cloud.thomaskrille.de'].server_key }}"

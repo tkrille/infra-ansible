@@ -6,7 +6,7 @@ router_openvpn_clients:
     client_name: router.home.thomaskrille.de
     cipher: AES-256-CBC
     comp_lzo: yes
-    dev: tun2
+    dev: tap0
     remotes:
       - 84.19.186.99 1194
       - 84.19.187.99 1194
