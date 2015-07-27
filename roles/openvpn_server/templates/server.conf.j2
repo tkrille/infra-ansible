@@ -16,6 +16,10 @@ mode server
 server {{ openvpn_server.server }}
 {% endif %}
 
+{% if openvpn_server.server_bridge is defined -%}
+server-bridge {{ openvpn_server.server_bridge }}
+{% endif %}
+
 {% if openvpn_server.crl is defined -%}
 crl-verify {{ openvpn_common_config_dir }}/{{ openvpn_server.server_name }}@{{ openvpn_server.vpn_name }}/crl.pem
 {% endif %}

@@ -4,14 +4,13 @@ server_openvpn_servers:
   cloud.thomaskrille.de:
     vpn_name: cloud.thomaskrille.de
     server_name: km21007.keymachine.de
+    server_bridge: 192.168.200.1 255.255.255.0 192.168.200.200 192.168.200.254
     cipher: AES-256-CBC
     comp_lzo: yes
     dev: tap0
     max_clients: 10
     float: yes
     client_to_client: yes
-    routes:
-      - 192.168.10.0 255.255.255.0 192.168.20.1
     options:
       - mute 5
     server_key: "{{ secrets_server_openvpn_servers['cloud.thomaskrille.de'].server_key }}"
