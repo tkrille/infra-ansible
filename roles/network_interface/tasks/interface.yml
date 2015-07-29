@@ -1,0 +1,8 @@
+---
+
+- name: Setup network interface
+  template: src=network_interface.j2
+              dest=/etc/network/interfaces.d/{{ network_interface.name }}.cfg
+              owner=root group=root mode=0644
+              backup=yes
+  notify: restart network

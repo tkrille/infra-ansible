@@ -1,0 +1,6 @@
+---
+
+- include: interface.yml
+  tags:
+    - network
+    - network_interface

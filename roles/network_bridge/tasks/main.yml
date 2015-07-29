@@ -1,0 +1,6 @@
+---
+
+- include: bridge.yml
+  tags:
+    - network
+    - network_bridge

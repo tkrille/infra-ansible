@@ -1,0 +1,8 @@
+---
+
+- name: Setup network bridge
+  template: src=network_bridge.j2
+              dest=/etc/network/interfaces.d/{{ network_bridge.name }}.cfg
+              owner=root group=root mode=0644
+              backup=yes
+  notify: restart network

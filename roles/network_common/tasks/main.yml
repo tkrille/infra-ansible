@@ -3,3 +3,4 @@
 - include: network.yml
   tags:
     - network
+    - network_common

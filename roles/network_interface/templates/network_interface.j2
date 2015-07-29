@@ -1,0 +1,11 @@
+auto {{ network_interface.name }}
+iface {{ network_interface.name }} inet static
+    address {{ network_interface.address }}
+    netmask {{ network_interface.netmask }}
+    network {{ network_interface.network }}
+    broadcast {{ network_interface.broadcast }}
+    gateway {{ network_interface.gateway }}
+    dns-nameservers {{ network_interface.dns_nameservers }}
+    dns-search {{ network_interface.dns_search }}
+    up {{ network_interface.up }}
+    down {{ network_interface.down }}

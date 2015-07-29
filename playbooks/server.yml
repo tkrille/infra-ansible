@@ -3,7 +3,10 @@
 - name: Configure dedicated Server
   hosts: server
   roles:
-    - network
+    - role: network_interface
+      network_interface: "{{ server_network_interface_eth0 }}"
+    - role: network_bridge
+      network_bridge: "{{ server_network_bridge_br0 }}"
     - dns
     - role: openvpn_server
       openvpn_server: "{{ server_openvpn_servers['cloud.thomaskrille.de'] }}"

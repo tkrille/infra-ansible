@@ -1,0 +1,26 @@
+---
+
+server_network_interface_eth0:
+  name: eth0
+  address: 84.19.186.99
+  netmask: 255.255.255.0
+  network: 84.19.186.0
+  broadcast: 84.19.186.255
+  gateway: 84.19.186.1
+  dns_nameservers: 193.22.254.22
+  dns_search: keymachine.de
+  up: ip addr add 84.19.187.99/24 dev $IFACE
+  down: ip addr del 84.19.187.99/24 dev $IFACE
+
+server_network_bridge_br0:
+  name: br0
+  address: 192.168.200.1
+  netmask: 255.255.255.0
+  network: 192.168.200.0
+  broadcast: 192.168.200.255
+  bridge_stp: "off"
+  bridge_ports: tap0
+  bridge_waitport: 0
+  bridge_maxwait: 0
+  bridge_fd: 0
+  up: ifconfig tap0 0.0.0.0 promisc up

@@ -1,0 +1,8 @@
+---
+
+- name: configure network
+  copy: src=network_interfaces.j2
+              dest=/etc/network/interfaces
+              owner=root group=root mode=0644
+              backup=yes
+  notify: restart network
