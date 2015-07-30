@@ -7,3 +7,4 @@ libvirt_packages:
   - libguestfs-tools
   - libvirt-dev
   - build-essential
+  - qemu-utils
