@@ -14,16 +14,16 @@
   register: vagrant_libvirt_version_result
 
 - name: install vagrant-libvirt
-  command: vagrant plugin install --plugin-version {{ libvirt_vagrant_libvirt_version }} vagrant-libvirt
-  when: vagrant_libvirt_version_result.stdout != libvirt_vagrant_libvirt_version
+  command: vagrant plugin install --plugin-version {{ vagrant_libvirt_version }} vagrant-libvirt
+  when: vagrant_libvirt_version_result.stdout != vagrant_libvirt_version
 
 - name: check vagrant-mutate version
   shell: vagrant plugin list | grep '^vagrant-mutate' | awk '{print $2}' | sed -e 's/.$//' -e 's/^.//'
   always_run: yes
   ignore_errors: yes
   changed_when: False
-  register: vagrant_mutate_version_result
+  register: vagrant_libvirt_vagrant_mutate_version_result
 
 - name: install vagrant-mutate
-  command: vagrant plugin install --plugin-version {{ libvirt_vagrant_mutate_version }} vagrant-mutate
-  when: vagrant_mutate_version_result.stdout != libvirt_vagrant_mutate_version
+  command: vagrant plugin install --plugin-version {{ vagrant_libvirt_vagrant_mutate_version }} vagrant-mutate
+  when: vagrant_libvirt_vagrant_mutate_version_result.stdout != vagrant_libvirt_vagrant_mutate_version

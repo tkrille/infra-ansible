@@ -1,0 +1,4 @@
+---
+
+vagrant_libvirt_version: 0.0.30
+vagrant_libvirt_vagrant_mutate_version: 1.0.0

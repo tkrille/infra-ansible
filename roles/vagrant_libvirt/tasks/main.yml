@@ -2,8 +2,8 @@
 
 - include: packages.yml
   tags:
-    - vagrant-libvirt
+    - vagrant_libvirt
 
 - include: configuration.yml
   tags:
-    - vagrant-libvirt
+    - vagrant_libvirt
