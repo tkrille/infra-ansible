@@ -1,0 +1,9 @@
+---
+
+libvirt_packages:
+  - bridge-utils
+  - libvirt-bin
+  - virt-top
+  - libguestfs-tools
+  - libvirt-dev
+  - build-essential
