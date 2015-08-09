@@ -3,7 +3,7 @@
 - name: determine init system
   set_fact:
     openvpn_facts_init_system: |
-      {%- if ansible_distribution == "OpenWrt" and ansible_distribution_release == "attitude_adjustment" -%}
+      {%- if ansible_distribution == "OpenWrt" -%}
       openwrt
       {%- else -%}
       traditional
@@ -20,5 +20,5 @@
   changed_when: openvpn_common_start_result.stdout == ""
 
 - name: enable OpenVPN (OpenWrt)
-  command: /etc/init.d/openvpn enable creates=/etc/rc.d/S95openvpn
+  command: /etc/init.d/openvpn enable creates=/etc/rc.d/S90openvpn
   when: openvpn_facts_init_system == "openwrt"

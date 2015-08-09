@@ -2,6 +2,7 @@
 
 packages_default:
   - htop
+  - bash
   - bash-completion
   - vim
   - git
@@ -10,3 +11,11 @@ packages_default:
   - screen
   - python-openssl
   - sudo
+  - wget
+  - ip
+  - swap-utils
+  - avahi-daemon
+  - openssh-client
+  - openssh-client-utils
+  - shadow-usermod
+  - zsh
