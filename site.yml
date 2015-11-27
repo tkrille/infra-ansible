@@ -1,9 +1,7 @@
 ---
 
 - include: playbooks/common_all.yml
-
 - include: playbooks/server.yml
-
 - include: playbooks/nas.yml
-
 - include: playbooks/router.yml
+- include: playbooks/upgrade.yml
