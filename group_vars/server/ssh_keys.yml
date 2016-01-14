@@ -1,3 +1,0 @@
----
-
-ssh_keys_root: '{{ secrets_ssh_keys_root }}'
