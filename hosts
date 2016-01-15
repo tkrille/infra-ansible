@@ -1,6 +1,3 @@
-[server]
-km21007.keymachine.de
-
 [webhost]
 km23549-01.keymachine.de
 
@@ -9,7 +6,3 @@ xqf-storage.home.thomaskrille.de
 
 [router]
 router.home.thomaskrille.de
-
-[external:children]
-server
-webhost
