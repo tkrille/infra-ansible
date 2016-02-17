@@ -1,12 +1,6 @@
-deb http://ftp.de.debian.org/debian jessie main non-free contrib
-deb http://ftp2.de.debian.org/debian jessie main non-free contrib
-
-deb http://ftp.de.debian.org/debian-security jessie/updates main contrib non-free
-
-deb http://ftp.de.debian.org/debian jessie-updates main contrib non-free
-deb http://ftp2.de.debian.org/debian jessie-updates main contrib non-free
-
+deb http://httpredir.debian.org/debian/ jessie main non-free contrib
+deb http://security.debian.org/ jessie/updates main non-free contrib
+deb http://httpredir.debian.org/debian/ jessie-updates main non-free contrib
 {% if apt_backports -%}
-deb http://ftp.de.debian.org/debian jessie-backports main contrib non-free
-deb http://ftp2.de.debian.org/debian jessie-backports main contrib non-free
+deb http://httpredir.debian.org/debian/ jessie-backports main non-free contrib
 {%- endif -%}
