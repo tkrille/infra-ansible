@@ -4,8 +4,3 @@
   apt: name={{ item }} state=latest update_cache=yes cache_valid_time=3600
   when: ansible_pkg_mgr == "apt"
   with_items: packages_custom
-
-- name: install custom packages (opkg)
-  opkg: state=present name={{ item }} update_cache=yes
-  when: ansible_pkg_mgr == "opkg"
-  with_items: packages_custom
