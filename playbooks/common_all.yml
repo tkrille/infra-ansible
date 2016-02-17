@@ -2,6 +2,13 @@
 
 - name: common stuff for all nodes
   hosts: all
+  pre_tasks:
+    - name: Generate locale en_US.UTF-8
+      locale_gen: name=en_US.UTF-8
+      tags: locale_gen
+    - name: Generate locale de_DE.UTF-8
+      locale_gen: name=de_DE.UTF-8
+      tags: locale_gen
   roles:
     - role: franklinkim.timezone
       timezone: 'Europe/Berlin'
