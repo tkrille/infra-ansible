@@ -1,0 +1,21 @@
+---
+
+- name: Install dnsmasq
+  apt:
+    state: latest
+    name: '{{ item }}'
+  with_items:
+    - dnsmasq
+    - resolvconf
+
+- name: configure dnsmasq
+  copy:
+    src: etc/dnsmasq.conf
+    dest: /etc/dnsmasq.conf
+  notify: restart dnsmasq
+
+- name: setup hosts
+  copy:
+    src: etc/hosts
+    dest: /etc/hosts
+  notify: restart dnsmasq
