@@ -1,0 +1,5 @@
+---
+
+- include: samba.yml
+  tags:
+    - samba

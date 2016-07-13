@@ -1,0 +1,17 @@
+---
+
+- name: install packages
+  apt:
+    name: samba
+    state: latest
+
+- name: configure samba server
+  copy:
+    src: etc/samba/smb.conf
+    dest: /etc/samba/smb.conf
+    owner: root
+    group: root
+    mode: 0644
+    validate: testparm -s %s
+  notify: restart samba
+
