@@ -15,5 +15,3 @@
               minute=0 hour=3
       tags:
         - cron_restart_cups
-        - configuration
-        - nas
