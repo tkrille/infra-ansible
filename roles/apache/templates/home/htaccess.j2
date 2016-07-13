@@ -1,0 +1,5 @@
+AuthType Basic
+AuthName "{{ item.name }}'s home dir"
+AuthBasicProvider external
+AuthExternal pwauth
+Require user {{ item.name }}

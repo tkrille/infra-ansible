@@ -1,0 +1,39 @@
+<VirtualHost *:80>
+    ServerName xqf-storage
+
+    ServerAdmin {{ apache_server_admin }}
+    DocumentRoot /home/files
+
+    LogLevel warn
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+    <IfModule mod_userdir.c>
+        UserDir /home
+        UserDir disabled
+        UserDir enabled{% for user in users %} {{ user.name }}{% endfor %}
+
+        <Directory /home/*/>
+            AllowOverride FileInfo AuthConfig Limit Indexes
+            Options MultiViews Indexes SymLinksIfOwnerMatch IncludesNoExec
+            <Limit GET POST OPTIONS>
+                Require all granted
+            </Limit>
+            <LimitExcept GET POST OPTIONS>
+                Require all denied
+            </LimitExcept>
+        </Directory>
+    </IfModule>
+
+    <IfModule mod_authnz_external.c>
+        AddExternalAuth pwauth /usr/sbin/pwauth
+        SetExternalAuthMethod pwauth pipe
+    </IfModule>
+
+    <Directory /home/files/>
+        Options Indexes FollowSymLinks
+        AllowOverride None
+        Require all granted
+      </Directory>
+</VirtualHost>

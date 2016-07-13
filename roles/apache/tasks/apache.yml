@@ -1,0 +1,88 @@
+---
+
+- name: install packages
+  apt:
+    name: '{{ item }}'
+    state: latest
+  with_items:
+    - apache2
+    - libapache2-mod-authnz-external
+    - pwauth
+
+- name: Don't leak OS information
+  lineinfile:
+    dest: /etc/apache2/conf-available/security.conf
+    regexp: '{{ item.regexp }}'
+    line: '{{ item.line }}'
+  with_items:
+    - regexp: ^ServerTokens
+      line: ServerTokens Prod
+    - regexp: ^ServerSignature
+      line: ServerSignature Off
+  notify: restart apache
+
+- name: Disable CGI
+  file:
+    state: absent
+    path: /etc/apache2/conf-enabled/serve-cgi-bin.conf
+  notify: restart apache
+
+- name: Add site 'xqf-storage'
+  template:
+    src: etc/apache2/sites-available/xqf-storage.conf.j2
+    dest: /etc/apache2/sites-available/xqf-storage.conf
+  notify: restart apache
+
+- name: Enable site 'xqf-storage'
+  file:
+    state: link
+    src: /etc/apache2/sites-available/xqf-storage.conf
+    dest: /etc/apache2/sites-enabled/xqf-storage.conf
+  notify: restart apache
+
+- name: Disable default site
+  file:
+    state: absent
+    path: /etc/apache2/sites-enabled/000-default.conf
+  notify: restart apache
+
+- name: Enable mod_userdir
+  apache2_module:
+    state: present
+    name: userdir
+  notify: restart apache
+
+- name: Allow Apache to acces user homes (default setting)
+  acl:
+    state: present
+    default: yes
+    etype: user
+    entity: www-data
+    name: /home/{{ item.name }}
+    permissions: rwx
+    recursive: yes
+  with_items: "{{ users }}"
+  when: apache_update_acls | default(False)
+
+- name: Allow Apache to acces user homes
+  acl:
+    state: present
+    etype: user
+    entity: www-data
+    name: /home/{{ item.name }}
+    permissions: rwx
+    recursive: yes
+  with_items: "{{ users }}"
+  when: apache_update_acls | default(False)
+
+- name: Enable mod_authnz_external
+  apache2_module:
+    state: present
+    name: authnz_external
+  notify: restart apache
+
+- name: Enable password protection for user homes
+  template:
+    src: home/htaccess.j2
+    dest: /home/{{ item.name }}/.htaccess
+  with_items: "{{ users }}"
