@@ -1,5 +1,4 @@
 ---
 
 - include: dotfiles.yml
-  when: dotfiles_enabled
   tags: dotfiles
