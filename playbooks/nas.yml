@@ -10,6 +10,7 @@
     - role: network_interface
     - role: dnsmasq
     - role: users
+    - role: samba
 
   tasks:
     - name: add cron job to restart cups on a regular basis
