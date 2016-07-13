@@ -9,6 +9,7 @@
         - apt_preferences
     - role: network_interface
     - role: dnsmasq
+    - role: users
 
   tasks:
     - name: add cron job to restart cups on a regular basis
