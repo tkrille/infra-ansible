@@ -62,7 +62,7 @@
     permissions: rwx
     recursive: yes
   with_items: "{{ users }}"
-  when: apache_update_acls | default(False)
+  when: apache_update_acls | default(False) and item.name not in apache_exclude_users
 
 - name: Allow Apache to acces user homes
   acl:
@@ -73,7 +73,7 @@
     permissions: rwx
     recursive: yes
   with_items: "{{ users }}"
-  when: apache_update_acls | default(False)
+  when: apache_update_acls | default(False) and item.name not in apache_exclude_users
 
 - name: Enable mod_authnz_external
   apache2_module:
@@ -86,3 +86,4 @@
     src: home/htaccess.j2
     dest: /home/{{ item.name }}/.htaccess
   with_items: "{{ users }}"
+  when: item.name not in apache_exclude_users

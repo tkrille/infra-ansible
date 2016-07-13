@@ -1,3 +1,4 @@
 ---
 
 apache_server_admin: '{{ secrets_apache_server_admin }}'
+apache_exclude_users: '{{ secrets_apache_exclude_users }}'
