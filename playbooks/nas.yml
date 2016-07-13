@@ -5,11 +5,6 @@
 
   roles:
     - role: debops.apt_preferences
-      apt_preferences_dependent_list:
-        - package: 'linux-image-kirkwood'
-          version: '3.16'
-          priority: 1001
-          reason: 'Backport Kernel 4.3 fails to start'
       tags:
         - apt_preferences
   tasks:
