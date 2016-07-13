@@ -1,0 +1,13 @@
+---
+
+- name: add users
+  user:
+    state: present
+    name: '{{ item.name }}'
+    group: '{{ item.group | default(item.name) }}'
+    groups: '{{ item.groups | default(omit) }}'
+    append: yes
+    comment: '{{ item.comment | default(omit) }}'
+    shell: '{{ item.shell | default(omit) }}'
+    system: '{{ item.system | default(omit) }}'
+  with_items: '{{ users }}'
