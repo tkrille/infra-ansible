@@ -1,4 +1,0 @@
----
-
-- name: package | install packages (opkg)
-  opkg: state=present name=openvpn-openssl
