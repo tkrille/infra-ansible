@@ -1,5 +1,0 @@
----
-
-- include: vagrant.yml
-  tags:
-    - vagrant

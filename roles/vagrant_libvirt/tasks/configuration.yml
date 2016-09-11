@@ -1,7 +1,0 @@
----
-
-- name: set libvirt as default vagrant provider (zsh)
-  copy: dest=/etc/zsh/zprofile content="export VAGRANT_DEFAULT_PROVIDER=libvirt"
-
-- name: set libvirt as default vagrant provider (bash)
-  copy: dest=/etc/profile.d/vagrant-libvirt.sh content="export VAGRANT_DEFAULT_PROVIDER=libvirt"

@@ -1,4 +1,0 @@
----
-
-- name: update guestfs appliance
-  command: /usr/sbin/update-guestfs-appliance
