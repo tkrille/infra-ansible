@@ -18,4 +18,3 @@
     - role: packages
     - role: ssh_keys
     - role: zsh
-    - role: dotfiles
