@@ -1,6 +1,0 @@
----
-
-- name: install default packages
-  apt: name={{ item }} state=latest update_cache=yes cache_valid_time=3600
-  when: ansible_pkg_mgr == "apt"
-  with_items: dns_packages

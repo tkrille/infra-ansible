@@ -1,6 +1,0 @@
----
-
-dns_packages:
-  - bind9
-  - bind9-doc
-  - dnsutils
