@@ -1,5 +1,4 @@
 ---
 
 - include: zsh.yml
-  when: zsh_enabled
   tags: zsh
