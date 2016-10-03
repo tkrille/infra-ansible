@@ -4,9 +4,6 @@
   hosts: nas
 
   roles:
-    - role: debops.apt_preferences
-      tags:
-        - apt_preferences
     - role: network_interface
     - role: dnsmasq
     - role: users
