@@ -2,4 +2,4 @@
 
 - name: deploy ssh keys for root
   authorized_key: user=root key="{{ ssh_keys[item] }} {{ item }}" state=present
-  with_items: ssh_keys_root
+  with_items: '{{ ssh_keys_root }}'

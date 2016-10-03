@@ -3,4 +3,4 @@
 - name: install custom packages (apt)
   apt: name={{ item }} state=latest update_cache=yes cache_valid_time=3600
   when: ansible_pkg_mgr == "apt"
-  with_items: packages_custom
+  with_items: '{{ packages_custom }}'
