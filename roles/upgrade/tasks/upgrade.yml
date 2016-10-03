@@ -3,7 +3,3 @@
 - name: update packages (apt)
   apt: upgrade=dist update_cache=yes cache_valid_time=3600 autoremove=yes
   when: ansible_pkg_mgr == "apt"
-
-- name: update packages (yum)
-  yum: name=* state=latest
-  when: ansible_pkg_mgr == "yum"
