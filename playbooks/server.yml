@@ -1,7 +1,7 @@
 ---
 
-- name: common stuff for all nodes
-  hosts: all,!workstation
+- name: Common stuff for servers
+  hosts: server
   pre_tasks:
     - name: Generate locale en_US.UTF-8
       locale_gen: name=en_US.UTF-8
