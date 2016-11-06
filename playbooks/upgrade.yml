@@ -1,7 +1,29 @@
 ---
 
-- name: upgrade all nodes
+- name: Upgrade all hosts
   hosts: all
+  remote_user: root
+  become: true
 
-  roles:
-    - upgrade
+  pre_tasks:
+  - name: Install 'python2-dnf'
+    command: dnf install -y python2-dnf
+    args:
+      creates: /usr/lib/python2.7/site-packages/dnf
+      warn: no
+    when: ansible_pkg_mgr == 'dnf'
+
+  tasks:
+  - name: Update packages (APT)
+    apt:
+      upgrade: dist
+      update_cache: yes
+      cache_valid_time: 3600
+      autoremove: yes
+    when: ansible_pkg_mgr == 'apt'
+
+  - name: Update packages (dnf)
+    dnf:
+      name: '*'
+      state: latest
+    when: ansible_pkg_mgr == 'dnf'

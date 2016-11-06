@@ -1,6 +1,0 @@
----
-
-- include: upgrade.yml
-  when: upgrade_enabled
-  tags:
-    - upgrade
