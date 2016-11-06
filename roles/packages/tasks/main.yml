@@ -1,5 +1,14 @@
 ---
 
+- name: Install 'python2-dnf'
+  command: dnf install -y python2-dnf
+  args:
+    creates: /usr/lib/python2.7/site-packages/dnf
+    warn: no
+  when: ansible_pkg_mgr == 'dnf'
+  tags:
+    - packages
+
 - include: packages_default.yml
   tags:
     - packages

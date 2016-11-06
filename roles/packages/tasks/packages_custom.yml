@@ -1,6 +1,13 @@
 ---
 
-- name: install custom packages (apt)
+- name: Install custom packages (APT)
   apt: name={{ item }} state=latest update_cache=yes cache_valid_time=3600
-  when: ansible_pkg_mgr == "apt"
+  when: ansible_pkg_mgr == 'apt'
+  with_items: '{{ packages_custom }}'
+
+- name: Install custom packages (dnf)
+  dnf:
+    name: '{{ item }}'
+    state: latest
+  when: ansible_pkg_mgr == 'dnf'
   with_items: '{{ packages_custom }}'

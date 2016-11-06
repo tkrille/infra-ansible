@@ -1,0 +1,16 @@
+---
+
+packages_default:
+  - mc
+  - htop
+  - zsh
+  - vim
+  - iotop
+  - lsof
+  - git
+  - nc
+  - curl
+  - tree
+  - screen
+  - sudo
+  - rsync
