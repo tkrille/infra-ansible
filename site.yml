@@ -1,5 +1,4 @@
 ---
 
 - include: playbooks/server.yml
-- include: playbooks/nas.yml
 - include: playbooks/upgrade.yml
