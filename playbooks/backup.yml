@@ -39,3 +39,29 @@
     args:
       removes: /mnt/*
       warn: False
+
+- name: Backup workstation
+  hosts: workstation
+
+  tasks:
+  - name: Backup home directory
+    synchronize:
+      archive: yes
+      compress: no
+      delete: yes
+      dest: '{{ item }}'
+      partial: yes
+      rsync_opts:
+      - "--exclude .android/"
+      - "--exclude .ansible/"
+      - "--exclude .cache/"
+      - "--exclude .config/google-chrome/Default/GPUCache/"
+      - "--exclude .config/google-chrome/ShaderCache/"
+      - "--exclude .config/Keybase/Cache/"
+      - "--exclude .config/Keybase/GPUCache/"
+      - "--exclude .gvfs/"
+      - "--exclude .IntelliJIdea2016.2/system/caches/"
+      src: /home/thomas/
+    with_items:
+    - /run/media/thomas/ext-secure/thomas/
+    - /run/media/thomas/key-secure/
