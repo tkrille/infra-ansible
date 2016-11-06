@@ -14,3 +14,4 @@ packages_default:
   - tree
   - screen
   - sudo
+  - rsync
