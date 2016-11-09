@@ -1,0 +1,9 @@
+---
+
+- name: Custom tasks for my workstation
+  hosts: workstation
+  remote_user: root
+  become: true
+
+  roles:
+  - packages

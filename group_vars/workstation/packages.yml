@@ -1,0 +1,62 @@
+---
+
+packages_custom:
+- adobe-source-code-pro-fonts
+- alacarte
+- apg
+- autojump-zsh
+- cifs-utils
+- dconf-editor
+- deja-dup
+- dia
+- docker
+- emacs
+- filezilla
+- gimp
+- gnome-shell-extension-gpaste
+- gnome-shell-extension-launch-new-instance
+- gnome-shell-extension-openweather
+- gnome-shell-extension-windowsNavigator
+- gradle
+- groovy
+- guake
+- httpie
+- java-1.8.0-openjdk
+- java-1.8.0-openjdk-devel
+- java-1.8.0-openjdk-src
+- java-1.8.0-openjdk-javadoc
+- jq
+- keepassx
+- kernel-devel
+- ktouch
+- libreoffice
+- maven
+- microcode_ctl
+- NetworkManager-openvpn-gnome
+- NetworkManager-vpnc-gnome
+- numlockx
+- python-pip
+- python3-pip
+- redshift-gtk
+- rlwrap
+- screenruler
+- unzip
+- uuid
+- vim-X11
+- vinagre
+- virt-manager
+- xbindkeys
+- xclip
+- xdotool
+- zsh-lovers
+
+#- vagrant_1.7.4_x86_64.rpm
+#- crossover-14.1.6-1.rpm
+#- rpmfusion-free-release
+#- rpmfusion-nonfree-release
+#- VirtualBox-5.0
+#- google-chrome-stable
+#- steam
+#- dropbox
+#- keybase.x86_64
+
