@@ -1,0 +1,7 @@
+---
+
+- name: Rebuild the hardware database index
+  command: udevadm hwdb --update
+
+- name: Load updated hardware database index into Kernel
+  command: udevadm trigger

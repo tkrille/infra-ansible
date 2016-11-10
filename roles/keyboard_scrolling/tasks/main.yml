@@ -1,0 +1,9 @@
+---
+
+- name: Map Zoom Slider to scroll up/down
+  copy:
+    dest: /etc/udev/hwdb.d/70-keyboard-custom.hwdb
+    src: etc/udev/hwdb.d/70-keyboard-custom.hwdb
+  notify:
+  - Rebuild the hardware database index
+  - Load updated hardware database index into Kernel
