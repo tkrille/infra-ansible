@@ -1,0 +1,4 @@
+---
+
+mdadm_mail_address: '{{ secrets_mdadm_mail_address }}'
+mdadm_mail_from: mdadm on xqf-storage

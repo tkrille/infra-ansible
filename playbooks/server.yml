@@ -29,3 +29,4 @@
     - role: samba
     - role: apache
     - role: smtp_relay
+    - role: mdadm_mail
