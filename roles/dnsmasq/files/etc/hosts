@@ -1,9 +1,0 @@
-127.0.0.1       localhost
-192.168.30.240  xqf-storage.home.thomaskrille.de xqf-storage
-192.168.30.210  printer.home.thomaskrille.de printer
-192.168.30.1    gateway.home.thomaskrille.de gateway
-
-# The following lines are desirable for IPv6 capable hosts
-::1             localhost ip6-localhost ip6-loopback
-ff02::1         ip6-allnodes
-ff02::2         ip6-allrouters

@@ -8,14 +8,21 @@
     - dnsmasq
     - resolvconf
 
-- name: configure dnsmasq
-  copy:
-    src: etc/dnsmasq.conf
+- name: Configure dnsmasq
+  template:
+    src: etc/dnsmasq.conf.j2
     dest: /etc/dnsmasq.conf
   notify: restart dnsmasq
 
-- name: setup hosts
-  copy:
-    src: etc/hosts
+- name: Setup host to IP mapping
+  template:
+    src: etc/dnsmasq-hosts.j2
+    dest: /etc/dnsmasq-hosts
+  notify: restart dnsmasq
+
+- name: Resolve own hostname to a real IP
+  lineinfile:
     dest: /etc/hosts
+    line: "{{ ansible_default_ipv4.address }} {{ ansible_fqdn }} {{ ansible_hostname }}"
+    regexp: "^.*{{ ansible_hostname }}.*"
   notify: restart dnsmasq

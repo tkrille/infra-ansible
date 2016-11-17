@@ -1,0 +1,4 @@
+{% for host in dnsmasq_hosts %}
+{{ host.ip }} {{ host.names|join(' ') }}
+{% endfor %}
+

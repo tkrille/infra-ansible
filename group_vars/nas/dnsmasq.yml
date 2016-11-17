@@ -1,0 +1,19 @@
+---
+
+dnsmasq_domain: home.thomaskrille.de
+
+dnsmasq_hosts:
+- ip: 192.168.30.210
+  names:
+  - printer.home.thomaskrille.de
+  - printer
+  mac: 08:00:37:8f:91:a2
+- ip: 192.168.30.1
+  names:
+  - gateway.home.thomaskrille.de
+  - gateway
+
+dnsmasq_dhcp_start: 192.168.30.100
+dnsmasq_dhcp_end: 192.168.30.199
+dnsmasq_dhcp_lease_time: 12h
+dnsmasq_dhcp_router: 192.168.30.1
