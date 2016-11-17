@@ -1,0 +1,5 @@
+---
+
+- include: mdadm_mail.yml
+  tags:
+  - mdadm_mail

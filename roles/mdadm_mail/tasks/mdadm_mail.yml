@@ -1,0 +1,14 @@
+---
+
+- name: Set email address
+  lineinfile:
+    dest: /etc/mdadm/mdadm.conf
+    regexp: "^MAILADDR"
+    line: "MAILADDR {{ mdadm_mail_address }}"
+
+- name: Set "from" field
+  lineinfile:
+    dest: /etc/mdadm/mdadm.conf
+    regexp: "^MAILFROM"
+    line: "MAILFROM {{ mdadm_mail_from }}"
+    insertafter: "^MAILADDR"
