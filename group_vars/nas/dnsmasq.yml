@@ -1,5 +1,9 @@
 ---
 
+dnsmasq_default_ipv4_address: 192.168.30.240
+dnsmasq_fqdn: xqf-storage.home.thomaskrille.de
+dnsmasq_hostname: xqf-storage
+
 dnsmasq_domain: home.thomaskrille.de
 
 dnsmasq_hosts:

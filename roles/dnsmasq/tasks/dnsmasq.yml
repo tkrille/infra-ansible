@@ -23,6 +23,6 @@
 - name: Resolve own hostname to a real IP
   lineinfile:
     dest: /etc/hosts
-    line: "{{ ansible_default_ipv4.address }} {{ ansible_fqdn }} {{ ansible_hostname }}"
+    line: "{{ dnsmasq_default_ipv4_address }} {{ dnsmasq_fqdn }} {{ dnsmasq_hostname }}"
     regexp: "^.*{{ ansible_hostname }}.*"
   notify: restart dnsmasq
