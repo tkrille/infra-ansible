@@ -28,3 +28,4 @@
     - role: users
     - role: samba
     - role: apache
+    - role: smtp_relay
