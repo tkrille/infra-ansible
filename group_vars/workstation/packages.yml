@@ -35,7 +35,9 @@ packages_custom:
 - NetworkManager-openvpn-gnome
 - NetworkManager-vpnc-gnome
 - numlockx
+- python-netaddr
 - python-pip
+- python3-netaddr
 - python3-pip
 - redshift-gtk
 - rlwrap
