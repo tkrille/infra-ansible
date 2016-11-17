@@ -1,0 +1,30 @@
+---
+
+- name: Install exim4
+  apt:
+    name: exim4
+    state: latest
+
+- name: Configure exim4
+  template:
+    src: etc/exim4/update-exim4.conf.conf.j2
+    dest: /etc/exim4/update-exim4.conf.conf
+  notify:
+  - Generate exim4 config
+  - Restart exim4
+
+- name: Configure exim4 SMTP authentication
+  template:
+    src: etc/exim4/passwd.client.j2
+    dest: /etc/exim4/passwd.client
+    owner: root
+    group: Debian-exim
+    mode: 0640
+  when: smtp_relay_auth_user is defined and smtp_relay_auth_password is defined
+  no_log: yes
+
+- name: Enable and start exim4
+  service:
+    name: exim4
+    state: started
+    enabled: yes

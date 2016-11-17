@@ -1,0 +1,5 @@
+---
+
+- include: smtp_relay.yml
+  tags:
+  - smtp_relay

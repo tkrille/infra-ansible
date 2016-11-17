@@ -1,0 +1,9 @@
+---
+
+- name: Generate exim4 config
+  command: update-exim4.conf
+
+- name: Restart exim4
+  service:
+    name: exim4
+    state: restarted
