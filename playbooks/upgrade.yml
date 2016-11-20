@@ -27,3 +27,7 @@
       name: '*'
       state: latest
     when: ansible_pkg_mgr == 'dnf'
+    register: upgrade_dnf_result
+  - name: Show update results (dnf)
+    debug: var=upgrade_dnf_result.results
+    when: upgrade_dnf_result.changed
