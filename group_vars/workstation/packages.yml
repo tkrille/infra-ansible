@@ -17,6 +17,7 @@ packages_custom:
 - gnome-shell-extension-launch-new-instance
 - gnome-shell-extension-openweather
 - gnome-shell-extension-windowsNavigator
+- gnome-tweak-tool
 - gradle
 - groovy
 - guake
