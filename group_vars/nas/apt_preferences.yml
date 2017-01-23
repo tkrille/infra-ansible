@@ -1,0 +1,7 @@
+---
+
+apt_preferences_dependent_list:
+  - package: 'linux-image-kirkwood'
+    delete: true
+    priority: 1001
+    reason: 'Backport Kernel 4.3 fails to start'
