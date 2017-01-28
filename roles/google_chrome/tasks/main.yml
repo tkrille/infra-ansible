@@ -1,0 +1,6 @@
+---
+
+- include: google_chrome.yml
+  tags:
+  - google_chrome
+
