@@ -1,0 +1,17 @@
+---
+
+- name: Enable Terminix COPR repo
+  yum_repository:
+    name: heikoada-terminix
+    description: Copr repo for terminix owned by heikoada
+    baseurl: https://copr-be.cloud.fedoraproject.org/results/heikoada/terminix/fedora-$releasever-$basearch/
+    skip_if_unavailable: yes
+    gpgcheck: yes
+    gpgkey: https://copr-be.cloud.fedoraproject.org/results/heikoada/terminix/pubkey.gpg
+    enabled: yes
+
+- name: Install Terminix
+  dnf:
+    name: terminix
+    state: latest
+  when: ansible_pkg_mgr == 'dnf'

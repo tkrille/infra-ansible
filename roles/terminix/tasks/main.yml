@@ -1,0 +1,6 @@
+---
+
+- include: terminix.yml
+  tags:
+  - terminix
+
