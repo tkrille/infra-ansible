@@ -10,6 +10,7 @@ packages_custom:
 - deja-dup
 - dia
 - docker
+- dropbox
 - emacs
 - filezilla
 - gimp
@@ -41,19 +42,15 @@ packages_custom:
 - python3-pip
 - rlwrap
 - screenruler
+- steam
 - unzip
 - uuid
 - vim-X11
 - vinagre
+- VirtualBox
 - virt-manager
 - xbindkeys
 - xclip
 - xdotool
 - zsh-lovers
-
-#- VirtualBox-5.0
 #- google-chrome-stable
-#- steam
-#- dropbox
-#- keybase.x86_64
-
