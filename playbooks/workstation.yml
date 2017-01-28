@@ -5,6 +5,12 @@
   remote_user: root
   become: true
 
+  pre_tasks:
+  - name: Install python bindings for SELinux
+    dnf:
+      name: libselinux-python
+      state: latest
+
   roles:
   - packages
   - keyboard_scrolling
