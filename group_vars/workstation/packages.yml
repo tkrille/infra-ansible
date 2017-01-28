@@ -52,9 +52,6 @@ packages_custom:
 - zsh-lovers
 
 #- vagrant_1.7.4_x86_64.rpm
-#- crossover-14.1.6-1.rpm
-#- rpmfusion-free-release
-#- rpmfusion-nonfree-release
 #- VirtualBox-5.0
 #- google-chrome-stable
 #- steam

@@ -1,0 +1,6 @@
+---
+
+- include: rpmfusion.yml
+  tags:
+  - rpmfusion
+

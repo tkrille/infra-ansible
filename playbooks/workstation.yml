@@ -12,5 +12,6 @@
       state: latest
 
   roles:
+  - rpmfusion
   - packages
   - keyboard_scrolling
