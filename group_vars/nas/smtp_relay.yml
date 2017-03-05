@@ -4,7 +4,6 @@ smtp_relay_smarthost_host: smtp.gmail.com
 smtp_relay_smarthost_port: 587
 smtp_relay_interfaces:
 - 127.0.0.1
-- ::1
 - '{{ ansible_default_ipv4.address }}'
 smtp_relay_allowed_networks:
 - "{{ (ansible_default_ipv4.network + '/' + ansible_default_ipv4.netmask)|ipaddr('net') }}"
