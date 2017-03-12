@@ -61,6 +61,7 @@
       - "--exclude .config/Keybase/GPUCache/"
       - "--exclude .gvfs/"
       - "--exclude .IntelliJIdea2016.2/system/caches/"
+      - "--exclude .local/share/gvfs-metadata/"
       src: /home/thomas/
     with_items:
     - /run/media/thomas/ext-secure/thomas/
