@@ -13,6 +13,7 @@ packages_custom:
 - dropbox
 - emacs
 - filezilla
+- firmware-addon-dell
 - gimp
 - gnome-shell-extension-gpaste
 - gnome-shell-extension-launch-new-instance
