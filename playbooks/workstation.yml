@@ -16,7 +16,7 @@
   - packages
   - vagrant
   - google_chrome
-  - terminix
+  - tilix
   - keyboard_scrolling
 
   tasks:

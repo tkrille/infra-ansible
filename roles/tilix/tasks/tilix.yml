@@ -1,6 +1,6 @@
 ---
 
-- name: Enable Terminix COPR repo
+- name: Enable Tilix COPR repo
   yum_repository:
     name: heikoada-terminix
     description: Copr repo for terminix owned by heikoada
@@ -10,8 +10,8 @@
     gpgkey: https://copr-be.cloud.fedoraproject.org/results/heikoada/terminix/pubkey.gpg
     enabled: yes
 
-- name: Install Terminix
+- name: Install Tilix
   dnf:
-    name: terminix
+    name: tilix
     state: latest
   when: ansible_pkg_mgr == 'dnf'
