@@ -20,16 +20,16 @@
       dest: /mnt/
       partial: yes
       rsync_opts:
-      - "--exclude='dev/'"
-      - "--exclude='home/lost+found/'"
-      - "--exclude='lost+found/'"
-      - "--exclude='media/'"
-      - "--exclude='mnt/'"
-      - "--exclude='proc/'"
-      - "--exclude='run/'"
-      - "--exclude='sys/'"
-      - "--exclude='tmp/'"
-      - "--exclude='var/cache/'"
+      - "--exclude=dev/"
+      - "--exclude=home/lost+found/"
+      - "--exclude=lost+found/"
+      - "--exclude=media/"
+      - "--exclude=mnt/"
+      - "--exclude=proc/"
+      - "--exclude=run/"
+      - "--exclude=sys/"
+      - "--exclude=tmp/"
+      - "--exclude=var/cache/"
       src: /
     delegate_to: '{{ inventory_hostname }}'
 
@@ -52,16 +52,16 @@
       dest: '{{ item }}'
       partial: yes
       rsync_opts:
-      - "--exclude .android/"
-      - "--exclude .ansible/"
-      - "--exclude .cache/"
-      - "--exclude .config/google-chrome/Default/GPUCache/"
-      - "--exclude .config/google-chrome/ShaderCache/"
-      - "--exclude .config/Keybase/Cache/"
-      - "--exclude .config/Keybase/GPUCache/"
-      - "--exclude .gvfs/"
-      - "--exclude .IntelliJIdea2016.2/system/caches/"
-      - "--exclude .local/share/gvfs-metadata/"
+      - "--exclude=.android/"
+      - "--exclude=.ansible/"
+      - "--exclude=.cache/"
+      - "--exclude=.config/google-chrome/Default/GPUCache/"
+      - "--exclude=.config/google-chrome/ShaderCache/"
+      - "--exclude=.config/Keybase/Cache/"
+      - "--exclude=.config/Keybase/GPUCache/"
+      - "--exclude=.gvfs/"
+      - "--exclude=.IntelliJIdea2016.2/system/caches/"
+      - "--exclude=.local/share/gvfs-metadata/"
       src: /home/thomas/
     with_items:
     - /run/media/thomas/ext-secure/thomas/
