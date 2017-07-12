@@ -16,8 +16,6 @@
   - packages
   - vagrant
   - google_chrome
-  - tilix
-  - keyboard_scrolling
 
   tasks:
   - name: Set swappiness
