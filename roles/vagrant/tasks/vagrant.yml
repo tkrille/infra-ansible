@@ -8,7 +8,7 @@
 
 - name: Install Vagrant
   dnf:
-    name: 'https://releases.hashicorp.com/vagrant/1.9.1/vagrant_1.9.1_x86_64.rpm'
+    name: 'https://releases.hashicorp.com/vagrant/1.9.7/vagrant_1.9.7_x86_64.rpm'
     state: present
-  when: ansible_pkg_mgr == 'dnf' and vagrant_package_list.results|selectattr("nevra", "equalto", "1:vagrant-1.9.1-1.x86_64")|list|length == 0
+  when: ansible_pkg_mgr == 'dnf' and vagrant_package_list.results|selectattr("nevra", "equalto", "1:1.9.7-1.x86_64")|list|length == 0
 
