@@ -11,9 +11,12 @@ packages_custom:
 - dropbox
 - firmware-addon-dell
 - gimp
+- gnome-shell-extension-alternate-tab
 - gnome-shell-extension-gpaste
 - gnome-shell-extension-launch-new-instance
 - gnome-shell-extension-openweather
+- gnome-shell-extension-sustmi-windowoverlay-icons
+- gnome-shell-extension-topicons-plus
 - gnome-shell-extension-windowsNavigator
 - gnome-tweak-tool
 - httpie
