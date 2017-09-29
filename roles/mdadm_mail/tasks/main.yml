@@ -1,5 +1,5 @@
 ---
 
-- include: mdadm_mail.yml
+- import_tasks: mdadm_mail.yml
   tags:
   - mdadm_mail

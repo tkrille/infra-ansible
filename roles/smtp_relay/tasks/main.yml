@@ -1,5 +1,5 @@
 ---
 
-- include: smtp_relay.yml
+- import_tasks: smtp_relay.yml
   tags:
   - smtp_relay

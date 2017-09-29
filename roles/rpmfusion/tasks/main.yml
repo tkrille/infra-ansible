@@ -1,6 +1,6 @@
 ---
 
-- include: rpmfusion.yml
+- import_tasks: rpmfusion.yml
   tags:
   - rpmfusion
 

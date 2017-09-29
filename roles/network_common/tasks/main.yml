@@ -1,5 +1,5 @@
 ---
 
-- include: network.yml
+- import_tasks: network.yml
   tags:
     - network_common

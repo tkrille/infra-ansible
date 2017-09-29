@@ -1,5 +1,5 @@
 ---
 
-- include: interface.yml
+- import_tasks: interface.yml
   tags:
     - network_interface

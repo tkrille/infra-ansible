@@ -1,5 +1,5 @@
 ---
 
-- include: apache.yml
+- import_tasks: apache.yml
   tags:
     - apache

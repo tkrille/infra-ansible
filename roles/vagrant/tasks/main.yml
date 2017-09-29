@@ -1,6 +1,6 @@
 ---
 
-- include: vagrant.yml
+- import_tasks: vagrant.yml
   tags:
   - vagrant
 

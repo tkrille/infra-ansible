@@ -1,6 +1,6 @@
 ---
 
-- include: google_chrome.yml
+- import_tasks: google_chrome.yml
   tags:
   - google_chrome
 

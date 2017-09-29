@@ -1,5 +1,5 @@
 ---
 
-- include: ssh_keys_root.yml
+- import_tasks: ssh_keys_root.yml
   tags:
     - ssh_keys

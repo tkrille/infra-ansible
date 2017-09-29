@@ -1,5 +1,5 @@
 ---
 
-- include: playbooks/upgrade.yml
-- include: playbooks/server.yml
-- include: playbooks/workstation.yml
+- import_playbook: playbooks/upgrade.yml
+- import_playbook: playbooks/server.yml
+- import_playbook: playbooks/workstation.yml

@@ -9,10 +9,10 @@
   tags:
     - packages
 
-- include: packages_default.yml
+- import_tasks: packages_default.yml
   tags:
     - packages
 
-- include: packages_custom.yml
+- import_tasks: packages_custom.yml
   tags:
     - packages

@@ -1,6 +1,6 @@
 ---
 
-- include: dnsmasq.yml
+- import_tasks: dnsmasq.yml
   tags:
     - dnsmasq
 
