@@ -3,4 +3,5 @@
 - import_tasks: vagrant.yml
   tags:
   - vagrant
+  when: ansible_pkg_mgr == 'dnf'
 

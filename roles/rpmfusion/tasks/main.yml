@@ -3,4 +3,5 @@
 - import_tasks: rpmfusion.yml
   tags:
   - rpmfusion
+  when: ansible_pkg_mgr == 'dnf'
 
