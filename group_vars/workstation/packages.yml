@@ -5,6 +5,7 @@ packages_custom:
 - alacarte
 - apg
 - autojump-zsh
+- chrome-gnome-shell
 - dconf-editor
 - deja-dup
 - docker
