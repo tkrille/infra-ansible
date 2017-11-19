@@ -10,4 +10,4 @@
   dnf:
     name: 'https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm'
     state: present
-  when: ansible_pkg_mgr == 'dnf' and google_chrome_package_list.results|selectattr("name", "equalto", "google-chrome-stable")|list|length == 0
+  when: google_chrome_package_list.results|selectattr("name", "equalto", "google-chrome-stable")|list|length == 0
