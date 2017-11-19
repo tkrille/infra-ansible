@@ -9,7 +9,8 @@ packages_custom:
 - deja-dup
 - docker
 - dropbox
-- firmware-addon-dell
+# TODO: currently not able to install
+#- firmware-addon-dell
 - gimp
 - gnome-shell-extension-alternate-tab
 - gnome-shell-extension-gpaste
