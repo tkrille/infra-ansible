@@ -57,10 +57,8 @@
       - "--exclude=.cache/"
       - "--exclude=.config/google-chrome/Default/GPUCache/"
       - "--exclude=.config/google-chrome/ShaderCache/"
-      - "--exclude=.config/Keybase/Cache/"
-      - "--exclude=.config/Keybase/GPUCache/"
       - "--exclude=.gvfs/"
-      - "--exclude=.IntelliJIdea2016.2/system/caches/"
+      - "--exclude=.IntelliJIdea2016.3/system/caches/"
       - "--exclude=.local/share/gvfs-metadata/"
       src: /home/thomas/
     with_items:
