@@ -55,10 +55,7 @@
       - "--exclude=.android/"
       - "--exclude=.ansible/"
       - "--exclude=.cache/"
-      - "--exclude=.config/google-chrome/Default/GPUCache/"
-      - "--exclude=.config/google-chrome/ShaderCache/"
       - "--exclude=.gvfs/"
-      - "--exclude=.IntelliJIdea2016.3/system/caches/"
       - "--exclude=.local/share/gvfs-metadata/"
       src: /home/thomas/
     with_items:
