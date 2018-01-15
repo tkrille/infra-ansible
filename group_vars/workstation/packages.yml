@@ -34,6 +34,7 @@ packages_custom:
 - perl-open
 - python-netaddr
 - python3-netaddr
+- redshift-gtk
 - rlwrap
 - screenruler
 - seahorse
