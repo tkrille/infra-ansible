@@ -1,4 +1,0 @@
----
-
-- name: Reconfigure all domains
-  command: /usr/local/psa/admin/sbin/httpdmng --reconfigure-all

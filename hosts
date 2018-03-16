@@ -1,11 +1,7 @@
-[webhost]
-km23549-01.keymachine.de
-
 [nas]
 xqf-storage.home.thomaskrille.de
 
 [server:children]
-webhost
 nas
 
 [workstation]

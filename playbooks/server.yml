@@ -19,12 +19,6 @@
     - role: ssh_keys
     - role: zsh
 
-- name: Custom task for webhost
-  hosts: webhost
-
-  roles:
-    - role: plesk
-
 - name: Custom tasks for NAS
   hosts: nas
 
