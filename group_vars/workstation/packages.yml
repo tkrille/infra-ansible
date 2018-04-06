@@ -24,7 +24,7 @@ packages_custom:
 - java-1.8.0-openjdk-src
 - java-1.8.0-openjdk-javadoc
 - jq
-- keepassx
+- keepassxc
 - kernel-devel
 - microcode_ctl
 - NetworkManager-openvpn-gnome
