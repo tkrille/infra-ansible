@@ -15,7 +15,7 @@ packages_custom:
 - gnome-shell-extension-gpaste
 - gnome-shell-extension-launch-new-instance
 - gnome-shell-extension-openweather
-- gnome-shell-extension-sustmi-windowoverlay-icons
+- gnome-shell-extension-windowoverlay-icons
 - gnome-shell-extension-windowsNavigator
 - gnome-tweak-tool
 - httpie
