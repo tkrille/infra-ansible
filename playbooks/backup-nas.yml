@@ -39,25 +39,3 @@
     args:
       removes: /mnt/*
       warn: False
-
-- name: Backup workstation
-  hosts: workstation
-
-  tasks:
-  - name: Backup home directory
-    synchronize:
-      archive: yes
-      compress: no
-      delete: yes
-      dest: '{{ item }}'
-      partial: yes
-      rsync_opts:
-      - "--exclude=.android/"
-      - "--exclude=.ansible/"
-      - "--exclude=.cache/"
-      - "--exclude=.gvfs/"
-      - "--exclude=.local/share/gvfs-metadata/"
-      src: /home/thomas/
-    with_items:
-    - /run/media/thomas/ext-secure/thomas/
-    - /run/media/thomas/key-secure/

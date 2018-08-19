@@ -1,0 +1,20 @@
+---
+
+- name: Backup workstation to key
+  hosts: workstation
+
+  tasks:
+  - name: Backup home directory
+    synchronize:
+      archive: yes
+      compress: no
+      delete: yes
+      dest: '/run/media/thomas/key-secure/'
+      partial: yes
+      rsync_opts:
+      - "--exclude=.ansible/"
+      - "--exclude=.gvfs/"
+      - "--exclude=.local/share/gvfs-metadata/"
+      - "--exclude=Videos/"
+      - "--exclude=VirtualBox VMs/"
+      src: /home/thomas/
