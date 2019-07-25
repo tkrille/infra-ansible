@@ -2,8 +2,8 @@
 
 network_interface:
   name: eth0
-  address: 192.168.30.240
+  address: 192.168.144.240
   netmask: 255.255.255.0
-  gateway: 192.168.30.1
-  dns_nameservers: 192.168.30.1
+  gateway: 192.168.144.1
+  dns_nameservers: 192.168.144.1
   dns_search: home.thomaskrille.de
