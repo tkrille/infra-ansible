@@ -13,8 +13,18 @@
       partial: yes
       rsync_opts:
       - "--exclude=.ansible/"
+      - "--exclude=.cache/"
       - "--exclude=.gvfs/"
       - "--exclude=.local/share/gvfs-metadata/"
       - "--exclude=Videos/"
       - "--exclude=VirtualBox VMs/"
+      - "--exclude=Games/"
+      - "--exclude=Downloads/"
+      - "--exclude=Temp/"
+      - "--exclude=Google Drive/"
+      - "--exclude=tarent/Google Drive/"
+      - "--exclude=.local/share/Steam/"
+      - "--exclude=.local/share/containers/"
+      - "--exclude=.wine/"
       src: /home/thomas/
+

@@ -13,6 +13,8 @@
       partial: yes
       rsync_opts:
       - "--exclude=.ansible/"
+      - "--exclude=.cache/"
       - "--exclude=.gvfs/"
       - "--exclude=.local/share/gvfs-metadata/"
+      - "--exclude=.local/share/containers/"
       src: /home/thomas/
